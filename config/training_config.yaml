@@ -1,0 +1,29 @@
+training:
+  experiment_name: "baseline_resnet50_exp01"
+  model_architecture: "resnet50"
+  pretrained: true
+  num_classes: 2 # Binary screening: 0 vs 1
+  
+  hyperparameters:
+    batch_size: 16
+    learning_rate: 0.0001
+    weight_decay: 0.0001
+    optimizer: "adamw"
+    lr_scheduler: "cosine_annealing"
+    epochs: 30
+    early_stopping_patience: 7
+    min_delta: 0.001
+    metric_to_monitor: "val_auroc"
+    monitor_mode: "max"
+
+  loss_function:
+    name: "bce_with_logits"
+    pos_weight: "auto" # Balanced according to class imbalance
+
+  augmentation:
+    train_only: true
+    horizontal_flip: true
+    vertical_flip: true
+    rotation_range: 20
+    brightness_contrast_p: 0.3
+

@@ -1,0 +1,25 @@
+project:
+  name: "diabetes_retina_research"
+  full_title: "Explainable AI for Early Diabetes Risk Screening Using Retinal Fundus Images in Rural India"
+  version: "0.1.0"
+  random_seed: 42
+  deterministic: true
+
+environment:
+  python_version: "3.11.9"
+  target_device: "cpu" # Default local fallback; switch to "cuda" when GPU is available
+  num_workers: 2
+
+paths:
+  data_raw: "data/raw"
+  data_interim: "data/interim"
+  data_processed: "data/processed"
+  data_external_test: "data/external_test"
+  manifests: "data/manifests"
+  checkpoints: "models/checkpoints"
+  outputs_figures: "outputs/figures"
+  outputs_metrics: "outputs/metrics"
+  outputs_predictions: "outputs/predictions"
+  outputs_explainability: "outputs/explainability"
+  docs: "docs"
+

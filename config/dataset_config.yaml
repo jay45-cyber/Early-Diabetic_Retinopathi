@@ -1,0 +1,47 @@
+dataset:
+  primary_target: "diabetes_status" # 0: Non-diabetic, 1: Diabetic
+  subgroup_target: "no_visible_dr" # Evaluates early diabetes signal in absence of clinical DR
+  
+  reference_standard:
+    hba1c_threshold_diabetic: 6.5 # % (>=6.5% indicates diabetes per ADA guidelines)
+    hba1c_threshold_prediabetic: 5.7 # % (5.7% - 6.4%)
+    fasting_glucose_diabetic_mg_dl: 126.0 # mg/dL
+    fasting_glucose_impaired_mg_dl: 100.0 # mg/dL
+
+  manifest_schema:
+    required_columns:
+      - participant_id
+      - image_id
+      - eye_side
+      - image_path
+      - dataset_id
+      - diabetes_label
+      - diabetes_label_source
+      - dr_grade
+    optional_columns:
+      - site_id
+      - camera_id
+      - capture_date
+      - image_quality
+      - hba1c
+      - fasting_glucose
+      - previous_diabetes_diagnosis
+      - age
+      - sex
+
+  preprocessing:
+    target_size: [384, 384]
+    normalize_mean: [0.485, 0.456, 0.406]
+    normalize_std: [0.229, 0.224, 0.225]
+    circular_crop: true
+    quality_filter_enabled: true
+    quality_threshold: 0.50
+
+  splitting:
+    strategy: "stratified_group_kfold"
+    group_column: "participant_id" # Crucial: prevents patient and both-eye leakage
+    train_ratio: 0.70
+    val_ratio: 0.15
+    internal_test_ratio: 0.15
+    random_state: 42
+

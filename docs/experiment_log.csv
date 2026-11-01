@@ -1,0 +1,2 @@
+experiment_id,timestamp,architecture,dataset_name,dataset_version,split_version,n_participants,n_images,batch_size,learning_rate,optimizer,epochs_trained,best_epoch,val_auroc,val_auprc,val_brier,test_auroc,test_auroc_dr0,test_sensitivity,test_specificity,checkpoint_path,git_commit,notes
+
