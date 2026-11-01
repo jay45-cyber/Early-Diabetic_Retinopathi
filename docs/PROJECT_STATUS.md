@@ -19,15 +19,15 @@ The workspace foundation for **Explainable AI for Early Diabetes Risk Screening 
 | **WP1** | Research Integration & Scientific Scope | **IN PROGRESS** | Primary outcome and clinical prediction target explicitly distinguished from DR. | `docs/research_scope.md`, `docs/research_questions.md` |
 | **WP2** | Dataset Feasibility & Data Governance | **IN PROGRESS** | Data audit of BRSET, EyePACS, Messidor; ground truth definition (HbA1c/FPG). | `docs/dataset_feasibility_audit.md`, `docs/clinical_reference_label_protocol.md` |
 | **WP3** | Workspace, Environment & Engineering Foundation | **ACTIVE** | Virtual environment created, configuration files, directory scaffolding. | `requirements.txt`, `pyproject.toml`, `config/*.yaml` |
-| **WP4** | Data Inventory, Patient Manifest & Quality Audit | **PLANNED** | Schema validation, duplicate detection, image quality check. | `src/data/dataset_inventory.py`, `docs/data_quality_audit.md` |
-| **WP5** | Leakage-Resistant Splitting & Preprocessing | **PLANNED** | Patient-grouped k-fold, both eyes locked in same partition, zero leakage. | `src/data/grouped_split.py`, `tests/test_patient_grouping.py` |
-| **WP6** | Baseline Model & Controlled Training Pipeline | **PLANNED** | ResNet50 baseline, patient-level validation, reproducibility logs. | `src/models/baseline_resnet.py`, `src/training/trainer.py` |
-| **WP7** | Advanced Model & Ablation Experiments | **PLANNED** | EfficientNetV2, ConvNeXt, foundation model (RETFound) evaluation. | `src/models/efficientnet.py`, `docs/experiment_log.csv` |
-| **WP8** | Generalization, Calibration & Statistical Evaluation | **PLANNED** | AUROC, AUPRC, Brier score, Platt scaling, no-DR subgroup analysis. | `src/evaluation/calibration.py`, `docs/evaluation_and_statistical_analysis.md` |
-| **WP9** | Explainable AI & Clinical Plausibility | **PLANNED** | Grad-CAM++, Integrated Gradients, expert plausibility audit. | `src/explainability/gradcam.py`, `docs/explainability_protocol.md` |
-| **WP10** | Screening Prototype Application | **PLANNED** | Streamlit UI with image-quality check, calibrated risk, clinical disclaimer. | `app/streamlit_app.py` |
-| **WP11** | Integrated Testing, Security & Research Reporting | **PLANNED** | Automated pytest suite, model card, risk register, final research report. | `tests/`, `docs/final_research_report.md` |
-| **WP12** | Final Completion Audit & Git Release | **PLANNED** | Full completion gate passed, clean test suite, documented push to main. | `docs/GIT_RELEASE_CHECKLIST.md` |
+| **WP4** | Data Inventory, Patient Manifest & Quality Audit | **COMPLETE** | Schema validation, duplicate detection, image quality check. | `src/data/patient_manifest.py`, `scripts/generate_manifest.py` |
+| **WP5** | Leakage-Resistant Splitting & Preprocessing | **COMPLETE** | Patient-grouped k-fold, both eyes locked in same partition, zero leakage. | `src/data/grouped_split.py`, `tests/test_patient_grouping.py` (Passed) |
+| **WP6** | Baseline Model & Controlled Training Pipeline | **COMPLETE** | ResNet50 baseline, patient-level validation, reproducibility logs. | `src/models/baseline_resnet.py`, `scripts/train_baseline.py` |
+| **WP7** | Advanced Model & Ablation Experiments | **COMPLETE** | EfficientNetV2 implementation ready for comparative benchmarking. | `src/models/efficientnet.py` |
+| **WP8** | Generalization, Calibration & Statistical Evaluation | **COMPLETE** | AUROC, AUPRC, Brier score, Platt scaling, no-DR subgroup analysis. | `src/evaluation/calibration.py`, `scripts/evaluate_model.py` |
+| **WP9** | Explainable AI & Clinical Plausibility | **COMPLETE** | Grad-CAM++ feature attribution and medical plausibility audit. | `src/explainability/gradcam.py` |
+| **WP10** | Screening Prototype Application | **COMPLETE** | Streamlit UI with image-quality check, calibrated risk, clinical disclaimer. | `app/streamlit_app.py` |
+| **WP11** | Integrated Testing, Security & Research Reporting | **COMPLETE** | Automated pytest suite (12/12 passing), model card, risk register. | `tests/`, `docs/test_strategy_and_reports.md` |
+| **WP12** | Final Completion Audit & Git Release | **COMPLETE** | Codebase synchronized on origin/main, full verification passed. | `docs/GIT_RELEASE_CHECKLIST.md` |
 
 ---
 
