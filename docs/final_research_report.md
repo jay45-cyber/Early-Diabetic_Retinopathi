@@ -113,3 +113,4 @@ A full Streamlit screening application (`app/streamlit_app.py`) was developed pr
 1. **Compute Resources**: Full-scale multi-epoch training of massive vision transformer backbones (e.g., RETFound ViT-Large) requires high-memory GPU nodes; scripts are fully containerized for cloud execution.
 2. **Clinical Prospective Trials**: Retrospective dataset validation must be followed by multi-center prospective screening trials in rural Indian district PHCs before clinical translation.
 3. **Explainability Plausibility**: Saliency heatmaps visualize network gradient concentrations and must not be interpreted as biological proof of medical causation without expert ophthalmologist validation.
+
